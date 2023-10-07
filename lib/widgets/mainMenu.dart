@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:metrovalencia/widgets/coheteGrande.dart';
 
 Widget mainMenu(BuildContext context) {
   return Container(
@@ -20,14 +21,29 @@ Widget mainMenu(BuildContext context) {
             children: [
               SizedBox(
                 height: 500,
-                child: Image.asset('assets/tierra.png'),
+                child: Hero(
+                  tag: 'imageTierra',
+                  child: Image.asset('assets/tierra.png'),
+                ),
               ),
               SizedBox(
                 height: 150,
-                child: Image.asset('assets/cohete.png'),
+                child: Hero(
+                  tag: 'imageCohete',
+                  child: Image.asset('assets/cohete.png'),
+                ),
               )
             ],
           ),
+          ElevatedButton(
+            child: Text("siguietne"),
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => coheteGrande(context)));
+            },
+          )
         ],
       ),
     ),
