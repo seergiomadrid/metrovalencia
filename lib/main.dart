@@ -56,9 +56,9 @@ class _NavigationExampleState extends State<NavigationExample> {
             label: 'Play',
           ),
           NavigationDestination(
-            selectedIcon: Icon(Icons.school),
-            icon: Icon(Icons.school_outlined),
-            label: 'School',
+            selectedIcon: Icon(Icons.info),
+            icon: Icon(Icons.help),
+            label: 'More information',
           ),
         ],
       ),
