@@ -8,6 +8,6 @@ class StartGame extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return mainMenu(context);
+    return mainMenu();
   }
 }
