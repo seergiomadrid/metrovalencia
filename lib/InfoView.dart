@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'widgets/InfoWidget.dart';
+import 'widgets/AnimateText.dart';
 
 
 class InfoView extends StatelessWidget {
@@ -101,6 +102,10 @@ class InfoView extends StatelessWidget {
             color: Colors.lightBlue[100 * (1 % 9)],
             child: Text('Item 1'),
           ),
+          
+
+          AnimatedTextWidget(
+          text: "Hallo wie geht es",)
         ]
       )
    )
