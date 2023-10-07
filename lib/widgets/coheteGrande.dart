@@ -41,6 +41,8 @@ class coheteGrande extends StatelessWidget {
         // arrowBackGame(context),
         // arrowForwardGame(context, const ThirdRoute())
       ),
+      // arrowBackGame(context),
+      // arrowForwardGame(context, const ThirdRoute())
     );
   }
 }
