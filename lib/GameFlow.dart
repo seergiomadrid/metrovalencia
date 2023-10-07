@@ -86,6 +86,35 @@ class ThirdRoute extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Third Route'),
       ),
+      body: Stack(children: <Widget>[
+        // Widget 1
+        Container(
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('assets/backgroundPreguntas.jpg'),
+              fit: BoxFit.cover,
+            ),
+          ),
+        ),
+        appDialog(context, "Mi pregunta"),
+        arrowBackGame(context),
+        arrowForwardGame(context, const Route4())
+      ]),
+    );
+  }
+}
+
+
+
+class Route4 extends StatelessWidget {
+  const Route4({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Route 4'),
+      ),
       body: Center(
         child: ElevatedButton(
           onPressed: () {

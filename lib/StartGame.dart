@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:metrovalencia/widgets/ArrowBackGame.dart';
 import 'package:metrovalencia/widgets/ArrowForwardGame.dart';
+import 'package:metrovalencia/widgets/appDialog.dart';
 import 'package:metrovalencia/widgets/coheteGrande.dart';
 import 'package:metrovalencia/widgets/mainMenu.dart';
 import 'GameFlow.dart';
