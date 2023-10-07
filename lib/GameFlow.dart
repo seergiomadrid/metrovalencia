@@ -20,7 +20,7 @@ class FirstRoute extends StatelessWidget {
       body: Stack(children: <Widget>[
         // Widget 1
         Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage('assets/main_planeta.jpg'),
               fit: BoxFit.cover,
