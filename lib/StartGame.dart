@@ -5,19 +5,14 @@ import 'GameFlow.dart';
 
 import 'widgets/AnimateText.dart';
 
-
-
 class StartGame extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return mainMenu();
     return Scaffold(
       appBar: AppBar(
         title: Text(''),
-        
       ),
-      body: 
-      Center(
+      body: Center(
         child: ElevatedButton(
           child: const Text('Open route'),
           onPressed: () {
@@ -27,7 +22,7 @@ class StartGame extends StatelessWidget {
             );
           },
         ),
-        ),
-      );
+      ),
+    );
   }
 }
