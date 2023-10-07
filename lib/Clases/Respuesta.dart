@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 
 class Respuesta {
-  String? enunciado;
-  StatelessWidget? siguientePantalla;
+  String enunciado;
+  bool correcta = true;
+  String feedback = '';
+
+  Respuesta({
+    required this.enunciado,
+    required this.correcta,
+    required this.feedback,
+  });
 }

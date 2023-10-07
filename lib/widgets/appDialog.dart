@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:metrovalencia/Clases/Pregunta.dart';
 
 import 'AnimateText.dart';
 
-Widget appDialog(BuildContext context, String pregunta) {
+Widget appDialog(BuildContext context, Pregunta pregunta) {
   // Maybe use this: String question, String answer1, nextPage1
 
   return Stack(
@@ -41,7 +42,7 @@ Widget appDialog(BuildContext context, String pregunta) {
               ],
             ),
             child: AnimatedTextWidget(
-              text: "Esta es la pregunta : " + pregunta,
+              text: "Esta es la pregunta : ${pregunta.enunciado}",
             )),
       ),
       Positioned(
@@ -79,7 +80,7 @@ Widget appDialog(BuildContext context, String pregunta) {
                   Navigator.pop(context);
                 },
                 child: Text(
-                  "A.       Set up orbital mirrors to amplify sunlight",
+                  "Esta es la pregunta : ? ${pregunta.respuesta1.enunciado} : ''}",
                   style: GoogleFonts.orbitron(
                     fontSize: 18,
                     color: Colors.white, // Color de texto blanco para contraste

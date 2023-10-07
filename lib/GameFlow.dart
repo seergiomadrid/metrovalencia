@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:metrovalencia/Clases/Pregunta.dart';
+import 'package:metrovalencia/Clases/Respuesta.dart';
 import 'package:metrovalencia/widgets/coheteGrande.dart';
 import 'widgets/ArrowBackGame.dart';
 import 'widgets/ArrowForwardGame.dart';
@@ -96,15 +98,26 @@ class ThirdRoute extends StatelessWidget {
             ),
           ),
         ),
-        appDialog(context, "Mi pregunta"),
+
+        appDialog(
+            context,
+            Pregunta(
+              enunciado: "enunciado",
+              respuesta1: Respuesta(
+                  enunciado: "enunciado resp",
+                  correcta: true,
+                  feedback: "asfasf"),
+              respuesta2: Respuesta(
+                  enunciado: "enunciado resp",
+                  correcta: true,
+                  feedback: "asfasf"),
+            )),
         arrowBackGame(context),
         arrowForwardGame(context, const Route4())
       ]),
     );
   }
 }
-
-
 
 class Route4 extends StatelessWidget {
   const Route4({super.key});

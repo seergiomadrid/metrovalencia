@@ -26,7 +26,7 @@ class UrlLauncherWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      child: Text(
+      child: const Text(
         'Open Browser',
         style: TextStyle(
           color: Colors.blue,
