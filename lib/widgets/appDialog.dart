@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 
 Widget appDialog(BuildContext context){
@@ -113,7 +114,7 @@ Widget appDialog(BuildContext context){
   left: 20, // Ajusta la posición del enlace según tus necesidades
   child: InkWell(
     onTap: () {
-      launch('https://twitter.com/home?lang=es');
+      launchUrlString('https://twitter.com/home?lang=es');
     },
     child: Text(
       "Visita mi perfil en Twitter",
