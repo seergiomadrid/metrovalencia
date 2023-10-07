@@ -6,7 +6,7 @@ Widget coheteGrande(BuildContext context) {
     decoration: const BoxDecoration(
       image: DecorationImage(
         image: AssetImage(
-            'assets/assetsHubbleLegacyField.png'), // Replace with your image asset path
+            'assetsHubbleLegacyField.png'), // Replace with your image asset path
         fit: BoxFit.cover, // You can adjust the fit mode as needed
       ),
     ),
