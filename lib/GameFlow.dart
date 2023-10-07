@@ -45,21 +45,34 @@ class SecondRoute extends StatelessWidget {
     return Scaffold(
         body: Stack(children: <Widget>[
       Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage('assets/backgroundPreguntas.jpg'),
             fit: BoxFit.cover,
           ),
         ),
       ),
-      Center(
-          child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-            appDialog(context),
-            arrowBackGame(context),
-            arrowForwardGame(context, const ThirdRoute())
-          ]))
+
+      coheteGrande(),
+      arrowForwardGame(context, ThirdRoute()),
+      arrowBackGame(context),
+      ElevatedButton(
+        child: const Text('Open route'),
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const FirstRoute()),
+          );
+        },
+      ),
+      // Center(
+      //     child: Column(
+      //         mainAxisAlignment: MainAxisAlignment.center,
+      //         children: <Widget>[
+      //       appDialog(context),
+      //       arrowBackGame(context),
+      //       arrowForwardGame(context, const ThirdRoute())
+      //     ]))
     ]));
   }
 }

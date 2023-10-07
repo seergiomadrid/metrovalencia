@@ -13,8 +13,8 @@ class StartGame extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          mainMenu(),
-          arrowForwardGame(context, SecondRoute()),
+          const mainMenu(),
+          arrowForwardGame(context, const SecondRoute()),
           arrowBackGame(context),
           ElevatedButton(
             child: const Text('Open route'),
