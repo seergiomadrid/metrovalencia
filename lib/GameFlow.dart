@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'widgets/ArrowBackGame.dart';
+import 'widgets/ArrowForwardGame.dart';
 
 class FirstRoute extends StatelessWidget {
   const FirstRoute({super.key});
@@ -110,35 +112,12 @@ class SecondRoute extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Second Route'),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                IconButton(
-                  icon: Icon(Icons.arrow_back),
-                  onPressed: () {
-                    Navigator.pop(context); // Navigate back to the previous page
-                  },
-                ),
-                SizedBox(width: 20),
-                IconButton(
-                  icon: Icon(Icons.arrow_forward),
-                  onPressed: () {   
-                    Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const ThirdRoute()),
-            );            
-                    },
-                ),
-              ],
-            ),
-            Text('Swipe to navigate'),
-          ],
-        ),
-      ),
+      body: Stack(
+        children: <Widget>[
+          arrowBackGame(context),
+          arrowForwardGame(context, const ThirdRoute() )
+        ]
+      )
     );
   }
 }
