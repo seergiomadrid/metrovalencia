@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
+import 'HomeView.dart';
+import 'StartGame.dart';
+import 'InfoView.dart';
 
-/// Flutter code sample for [NavigationBar].
 
 void main() => runApp(const NavigationBarApp());
+
+void navigateToPage(BuildContext context, Widget page) {
+  Navigator.of(context).push(MaterialPageRoute(builder: (_) => page));
+}
 
 class NavigationBarApp extends StatelessWidget {
   const NavigationBarApp({super.key});
@@ -54,6 +61,16 @@ class _NavigationExampleState extends State<NavigationExample> {
         ],
       ),
       body: <Widget>[
+            HomeView(),
+            StartGame(),
+            InfoView(),
+
+
+      /*
+
+
+
+
         Container(
             decoration: BoxDecoration(
               image: DecorationImage(
@@ -71,7 +88,7 @@ class _NavigationExampleState extends State<NavigationExample> {
           color: Colors.blue,
           alignment: Alignment.center,
           child: const Text('Page 3'),
-        ),
+        ),*/
       ][currentPageIndex],
     );
   }
