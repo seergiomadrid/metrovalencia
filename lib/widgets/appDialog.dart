@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:metrovalencia/Clases/Pregunta.dart';
+import 'package:metrovalencia/GameFlow.dart';
+import 'package:metrovalencia/widgets/correctAnswer.dart';
 
 import 'AnimateText.dart';
 
@@ -77,10 +79,24 @@ Widget appDialog(BuildContext context, Pregunta pregunta) {
 
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.pop(context);
+                  if (pregunta.respuesta1.correcta) {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Route4(
+                                  respuesta: pregunta.respuesta1,
+                                )));
+                  } else {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              Route5(respuesta: pregunta.respuesta1),
+                        ));
+                  }
                 },
                 child: Text(
-                  "Esta es la pregunta  ${pregunta.respuesta1.enunciado}}",
+                  "A. ${pregunta.respuesta1.enunciado}}",
                   style: GoogleFonts.orbitron(
                     fontSize: 18,
                     color: Colors.white, // Color de texto blanco para contraste
@@ -89,7 +105,7 @@ Widget appDialog(BuildContext context, Pregunta pregunta) {
                 ),
               ),
             ),
-            SizedBox(height: 20), // Espacio entre los cuadros de texto
+            SizedBox(height: 20),
             Container(
               padding: EdgeInsets.all(20),
               width: MediaQuery.of(context).size.width *
@@ -112,12 +128,30 @@ Widget appDialog(BuildContext context, Pregunta pregunta) {
                   ),
                 ],
               ),
-              child: Text(
-                "B.${pregunta.respuesta2.enunciado}",
-                style: GoogleFonts.orbitron(
-                  fontSize: 18,
-                  color: Colors.white, // Color de texto blanco para contraste
-                  // Cambiado a Arial como ejemplo. Deberías escoger y añadir una fuente que te guste.
+
+              child: ElevatedButton(
+                onPressed: () {
+                  if (pregunta.respuesta2.correcta) {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                Route4(respuesta: pregunta.respuesta2)));
+                  } else {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                Route5(respuesta: pregunta.respuesta2)));
+                  }
+                },
+                child: Text(
+                  "B. ${pregunta.respuesta2.enunciado}}",
+                  style: GoogleFonts.orbitron(
+                    fontSize: 18,
+                    color: Colors.white, // Color de texto blanco para contraste
+                    // Cambiado a Arial como ejemplo. Deberías escoger y añadir una fuente que te guste.
+                  ),
                 ),
               ),
             ),
