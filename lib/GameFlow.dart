@@ -26,7 +26,7 @@ class FirstRoute extends StatelessWidget {
         Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('assets/main_planeta.jpg'),
+              image: AssetImage('assets/ELPERCU_wide_1.png'),
               fit: BoxFit.cover,
             ),
           ),

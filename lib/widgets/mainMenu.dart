@@ -17,7 +17,7 @@ class _mainMenuState extends State<mainMenu> {
       decoration: const BoxDecoration(
         image: DecorationImage(
           image: AssetImage(
-              'assetsHubbleLegacyField.png'), // Replace with your image asset path
+              'ELPERCU_wide_1.png'), // Replace with your image asset path
           fit: BoxFit.cover, // You can adjust the fit mode as needed
         ),
       ),
