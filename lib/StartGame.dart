@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:metrovalencia/widgets/ArrowBackGame.dart';
+import 'package:metrovalencia/widgets/ArrowForwardGame.dart';
 import 'package:metrovalencia/widgets/coheteGrande.dart';
 import 'package:metrovalencia/widgets/mainMenu.dart';
 import 'GameFlow.dart';
@@ -9,19 +11,21 @@ class StartGame extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(''),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          child: const Text('Open route'),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const FirstRoute()),
-            );
-          },
-        ),
+      body: Stack(
+        children: [
+          mainMenu(),
+          arrowForwardGame(context, coheteGrande()),
+          arrowBackGame(context),
+          ElevatedButton(
+            child: const Text('Open route'),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const FirstRoute()),
+              );
+            },
+          ),
+        ],
       ),
     );
   }

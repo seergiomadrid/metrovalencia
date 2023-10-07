@@ -47,10 +47,8 @@ class _mainMenuState extends State<mainMenu> {
           ElevatedButton(
             child: Text("siguietne"),
             onPressed: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => coheteGrande(context)));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => coheteGrande()));
             },
           )
         ],
