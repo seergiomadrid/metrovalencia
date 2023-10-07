@@ -1,4 +1,83 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
+/// Flutter code sample for [NavigationBar].
+
+void main() => runApp(const NavigationBarApp());
+
+class NavigationBarApp extends StatelessWidget {
+  const NavigationBarApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(home: NavigationExample());
+  }
+}
+
+class NavigationExample extends StatefulWidget {
+  const NavigationExample({super.key});
+
+  @override
+  State<NavigationExample> createState() => _NavigationExampleState();
+}
+
+class _NavigationExampleState extends State<NavigationExample> {
+  int currentPageIndex = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      bottomNavigationBar: NavigationBar(
+        backgroundColor: Color.fromARGB(255, 237, 182, 162),
+        onDestinationSelected: (int index) {
+          setState(() {
+            currentPageIndex = index;
+          });
+        },
+        indicatorColor: const Color.fromARGB(255, 185, 136, 73),
+        selectedIndex: currentPageIndex,
+        destinations: const <Widget>[
+          NavigationDestination(
+            selectedIcon: Icon(Icons.home),
+            icon: Icon(Icons.home_outlined),
+            label: 'Home',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.play_arrow),
+            label: 'Play',
+          ),
+          NavigationDestination(
+            selectedIcon: Icon(Icons.school),
+            icon: Icon(Icons.school_outlined),
+            label: 'School',
+          ),
+        ],
+      ),
+      body: <Widget>[
+        Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('assets/main_planeta.jpg'), // Replace with your image asset path
+                fit: BoxFit.cover, // You can adjust the fit mode as needed
+              ),
+            ),
+        ),
+        Container(
+          color: Colors.green,
+          alignment: Alignment.center,
+          child: const Text('Page 2'),
+        ),
+        Container(
+          color: Colors.blue,
+          alignment: Alignment.center,
+          child: const Text('Page 3'),
+        ),
+      ][currentPageIndex],
+    );
+  }
+}
+
+/*
 
 void main() {
   runApp(const MyApp());
@@ -123,3 +202,4 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+*/
