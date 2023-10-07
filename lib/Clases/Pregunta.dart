@@ -2,12 +2,12 @@ import 'Respuesta.dart';
 
 class Pregunta {
   String enunciado;
-  Respuesta? respuesta1;
-  Respuesta? respuesta2;
+  Respuesta respuesta1;
+  Respuesta respuesta2;
 
   Pregunta({
     required this.enunciado,
-    this.respuesta1,
-    this.respuesta2,
+    required this.respuesta1,
+    required this.respuesta2,
   });
 }

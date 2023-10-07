@@ -80,7 +80,7 @@ Widget appDialog(BuildContext context, Pregunta pregunta) {
                   Navigator.pop(context);
                 },
                 child: Text(
-                  "Esta es la pregunta : ? ${pregunta.respuesta1.enunciado} : ''}",
+                  "Esta es la pregunta  ${pregunta.respuesta1.enunciado}}",
                   style: GoogleFonts.orbitron(
                     fontSize: 18,
                     color: Colors.white, // Color de texto blanco para contraste
@@ -113,7 +113,7 @@ Widget appDialog(BuildContext context, Pregunta pregunta) {
                 ],
               ),
               child: Text(
-                "B.       Set up orbital mirrors to amplify sunlight",
+                "B.${pregunta.respuesta2.enunciado}",
                 style: GoogleFonts.orbitron(
                   fontSize: 18,
                   color: Colors.white, // Color de texto blanco para contraste
