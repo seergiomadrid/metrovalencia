@@ -1,5 +1,6 @@
 // HomeView.dart
 import 'package:flutter/material.dart';
+import 'package:metrovalencia/widgets/appDialog.dart';
 
 class HomeView extends StatelessWidget {
   @override
@@ -11,7 +12,7 @@ class HomeView extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets\HubbleLegacyField.png'),
+            image: AssetImage('assetsHubbleLegacyField.png'),
             fit: BoxFit.cover,
           ),
         ),

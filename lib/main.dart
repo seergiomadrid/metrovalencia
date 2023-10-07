@@ -5,6 +5,8 @@ import 'HomeView.dart';
 import 'StartGame.dart';
 import 'InfoView.dart';
 import 'package:metrovalencia/widgets/MainMenu.dart';
+import 'package:google_fonts/google_fonts.dart';
+
 
 void main() => runApp(const NavigationBarApp());
 
