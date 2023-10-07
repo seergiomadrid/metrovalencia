@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:metrovalencia/Clases/Pregunta.dart';
 import 'package:metrovalencia/GameFlow.dart';
+import 'package:metrovalencia/animacion/slide.dart';
 import 'package:metrovalencia/widgets/correctAnswer.dart';
 
 import 'AnimateText.dart';
@@ -80,19 +81,19 @@ Widget appDialog(BuildContext context, Pregunta pregunta) {
               child: ElevatedButton(
                 onPressed: () {
                   if (pregunta.respuesta1.correcta) {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => Route4(
-                                  respuesta: pregunta.respuesta1,
-                                )));
+                    Navigator.of(context).push(createRoute(
+                      context,
+                      Route4(
+                        respuesta: pregunta.respuesta1,
+                      ),
+                    ));
                   } else {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) =>
-                              Route5(respuesta: pregunta.respuesta1),
-                        ));
+                    Navigator.of(context).push(createRoute(
+                      context,
+                      Route5(
+                        respuesta: pregunta.respuesta1,
+                      ),
+                    ));
                   }
                 },
                 child: Text(
@@ -132,17 +133,19 @@ Widget appDialog(BuildContext context, Pregunta pregunta) {
               child: ElevatedButton(
                 onPressed: () {
                   if (pregunta.respuesta2.correcta) {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                Route4(respuesta: pregunta.respuesta2)));
+                    Navigator.of(context).push(createRoute(
+                      context,
+                      Route4(
+                        respuesta: pregunta.respuesta2,
+                      ),
+                    ));
                   } else {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                Route5(respuesta: pregunta.respuesta2)));
+                    Navigator.of(context).push(createRoute(
+                      context,
+                      Route5(
+                        respuesta: pregunta.respuesta2,
+                      ),
+                    ));
                   }
                 },
                 child: Text(

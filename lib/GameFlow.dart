@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:metrovalencia/Clases/Pregunta.dart';
 import 'package:metrovalencia/Clases/Respuesta.dart';
+import 'package:metrovalencia/animacion/slide.dart';
 import 'package:metrovalencia/widgets/coheteGrande.dart';
 import 'package:metrovalencia/widgets/correctAnswer.dart';
 import 'package:metrovalencia/widgets/wrongAnswer.dart';
@@ -63,10 +64,7 @@ class SecondRoute extends StatelessWidget {
       ElevatedButton(
         child: const Text('Open route'),
         onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const FirstRoute()),
-          );
+          //Navigator.of(context).push(createRoute(context,));
         },
       ),
       // Center(
