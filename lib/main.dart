@@ -4,7 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'HomeView.dart';
 import 'StartGame.dart';
 import 'InfoView.dart';
-
+import 'package:metrovalencia/widgets/MainMenu.dart';
 
 void main() => runApp(const NavigationBarApp());
 
@@ -61,12 +61,11 @@ class _NavigationExampleState extends State<NavigationExample> {
         ],
       ),
       body: <Widget>[
-            HomeView(),
-            StartGame(),
-            InfoView(),
+        HomeView(),
+        StartGame(),
+        InfoView(),
 
-
-      /*
+        /*
 
 
 
