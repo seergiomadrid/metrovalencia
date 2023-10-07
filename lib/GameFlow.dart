@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'widgets/ArrowBackGame.dart';
 import 'widgets/ArrowForwardGame.dart';
+import 'widgets/appDialog.dart';
+
+
 
 class FirstRoute extends StatelessWidget {
   const FirstRoute({super.key});
@@ -34,16 +37,43 @@ class FirstRoute extends StatelessWidget {
 class SecondRoute extends StatelessWidget {
   const SecondRoute({super.key});
 
+  
+
   @override
   Widget build(BuildContext context) {
+    final Size screenSize = MediaQuery.of(context).size;
+    final double screenWidth = screenSize.width;
+    final double screenHeight = screenSize.height;
+
     return Scaffold(
         appBar: AppBar(
           title: const Text('Second Route'),
         ),
         body: Stack(children: <Widget>[
-          arrowBackGame(context),
-          arrowForwardGame(context, const ThirdRoute())
-        ]));
+          Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('assets/backgroundPreguntas.jpg'),
+              fit: BoxFit.cover,
+            ),
+          ),
+        ),
+
+          Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              appDialog(context),
+          
+              arrowBackGame(context),
+              arrowForwardGame(context, const ThirdRoute())
+        ]
+        )
+          )
+        ]
+        )
+        );
+
   }
 }
 
@@ -86,3 +116,64 @@ onPressed: () {
 
 */
 
+
+/*
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Box Layout'),
+        ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Container(
+                width: 200, // Adjust the width as needed
+                height: 100, // Adjust the height as needed
+                color: Colors.blue,
+                alignment: Alignment.center,
+                child: Text(
+                  'Question',
+                  style: TextStyle(color: Colors.white, fontSize: 24),
+                ),
+              ),
+              SizedBox(height: 20), // Add spacing between the boxes
+              Container(
+                width: 150, // Adjust the width as needed
+                height: 60, // Adjust the height as needed
+                color: Colors.green,
+                alignment: Alignment.center,
+                child: Text(
+                  'Answer 1',
+                  style: TextStyle(color: Colors.white, fontSize: 18),
+                ),
+              ),
+              SizedBox(height: 10), // Add spacing between the boxes
+              Container(
+                width: 150, // Adjust the width as needed
+                height: 60, // Adjust the height as needed
+                color: Colors.orange,
+                alignment: Alignment.center,
+                child: Text(
+                  'Answer 2',
+                  style: TextStyle(color: Colors.white, fontSize: 18),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+*/
