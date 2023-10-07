@@ -59,21 +59,14 @@ class SecondRoute extends StatelessWidget {
           ),
         ),
 
-          Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              appDialog(context),
+        appDialog(context),
           
               arrowBackGame(context),
               arrowForwardGame(context, const ThirdRoute())
-        ]
-        )
-          )
-        ]
-        )
-        );
 
+        ]
+        )
+    );
   }
 }
 
