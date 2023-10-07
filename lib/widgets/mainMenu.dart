@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:metrovalencia/GameFlow.dart';
 import 'package:metrovalencia/widgets/coheteGrande.dart';
 
 class mainMenu extends StatefulWidget {
@@ -48,7 +49,7 @@ class _mainMenuState extends State<mainMenu> {
             child: Text("siguietne"),
             onPressed: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => coheteGrande()));
+                  MaterialPageRoute(builder: (context) => SecondRoute()));
             },
           )
         ],

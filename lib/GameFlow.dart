@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:metrovalencia/widgets/coheteGrande.dart';
 import 'widgets/ArrowBackGame.dart';
 import 'widgets/ArrowForwardGame.dart';
 import 'widgets/appDialog.dart';
-
-
 
 class FirstRoute extends StatelessWidget {
   const FirstRoute({super.key});
@@ -28,7 +27,7 @@ class FirstRoute extends StatelessWidget {
           ),
         ),
         arrowBackGame(context),
-          arrowForwardGame(context, const SecondRoute())
+        arrowForwardGame(context, const SecondRoute())
       ]),
     );
   }
@@ -37,8 +36,6 @@ class FirstRoute extends StatelessWidget {
 class SecondRoute extends StatelessWidget {
   const SecondRoute({super.key});
 
-  
-
   @override
   Widget build(BuildContext context) {
     final Size screenSize = MediaQuery.of(context).size;
@@ -46,34 +43,24 @@ class SecondRoute extends StatelessWidget {
     final double screenHeight = screenSize.height;
 
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Second Route'),
-        ),
         body: Stack(children: <Widget>[
-          Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('assets/backgroundPreguntas.jpg'),
-              fit: BoxFit.cover,
-            ),
+      Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/backgroundPreguntas.jpg'),
+            fit: BoxFit.cover,
           ),
         ),
-
-          Center(
+      ),
+      Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              appDialog(context),
-          
-              arrowBackGame(context),
-              arrowForwardGame(context, const ThirdRoute())
-        ]
-        )
-          )
-        ]
-        )
-        );
-
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+            appDialog(context),
+            arrowBackGame(context),
+            arrowForwardGame(context, const ThirdRoute())
+          ]))
+    ]));
   }
 }
 
