@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'AnimateText.dart';
 
-Widget appDialog(BuildContext context, String question, String correct, String wrong){
+
+Widget appDialog(BuildContext context, String pregunta){ // Maybe use this: String question, String answer1, nextPage1
   
   return Stack(
   children: [
@@ -33,14 +35,8 @@ Widget appDialog(BuildContext context, String question, String correct, String w
             ),
           ],
         ),
-        child: Text(
-          "Before anything, Titan's freezing temperatures need to be addressed. How do we bring warmth?",
-          style: GoogleFonts.orbitron(
-            fontSize: 24,
-            color: Colors.white, // Color de texto blanco para contraste
-             // Cambiado a Arial como ejemplo. Deberías escoger y añadir una fuente que te guste.
-          ),
-        ),
+        child: AnimatedTextWidget(
+          text: "Esta es la pregunta : " + pregunta,)
       ),
     ),
     Positioned(
@@ -67,14 +63,20 @@ Widget appDialog(BuildContext context, String question, String correct, String w
                 ),
               ],
             ),
-            child: Text(
+
+
+            child: ElevatedButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: Text(
               "A.       Set up orbital mirrors to amplify sunlight",
               style: GoogleFonts.orbitron(
                 fontSize: 18,
                 color: Colors.white, // Color de texto blanco para contraste
                 // Cambiado a Arial como ejemplo. Deberías escoger y añadir una fuente que te guste.
-              ),
-            ),
+              ),),
+        ),
           ),
           SizedBox(height: 20), // Espacio entre los cuadros de texto
           Container(
@@ -109,6 +111,77 @@ Widget appDialog(BuildContext context, String question, String correct, String w
     ),
   ],
 );
+
+
+
+// Para mostrar las cajas sucesivamente
+
+/*
+
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Boxes One After Another with Delay'),
+        ),
+        body: DelayedBoxList(),
+      ),
+    );
+  }
+}
+
+class DelayedBoxList extends StatefulWidget {
+  @override
+  _DelayedBoxListState createState() => _DelayedBoxListState();
+}
+
+class _DelayedBoxListState extends State<DelayedBoxList> {
+  final List<String> boxContents = ['Box 1', 'Box 2', 'Box 3', 'Box 4'];
+  int currentIndex = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _displayBoxesWithDelay();
+  }
+
+  Future<void> _displayBoxesWithDelay() async {
+    for (int i = 0; i < boxContents.length; i++) {
+      await Future.delayed(Duration(seconds: 1)); // Adjust the delay time
+      setState(() {
+        currentIndex = i;
+      });
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      itemCount: currentIndex + 1,
+      itemBuilder: (BuildContext context, int index) {
+        return Container(
+          width: 200,
+          height: 100,
+          color: Colors.blue,
+          alignment: Alignment.center,
+          child: Text(
+            boxContents[index],
+            style: TextStyle(color: Colors.white, fontSize: 18),
+          ),
+        );
+      },
+    );
+  }
+}
+
+
+*/
+
+
+
 
 
   /*return Positioned(

@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 
+import 'package:google_fonts/google_fonts.dart';
+
 
 
 class AnimatedTextWidget extends StatefulWidget {
@@ -53,8 +55,11 @@ class _AnimatedTextWidgetState extends State<AnimatedTextWidget> {
     return Center(
       child: Text(
         visibleLetters,
-        style: TextStyle(fontSize: 24),
+        style: GoogleFonts.orbitron(
+                fontSize: 18,
+                color: Colors.white,)
       ),
     );
   }
 }
+
