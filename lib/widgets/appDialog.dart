@@ -9,15 +9,13 @@ import 'AnimateText.dart';
 
 class appDialog extends StatefulWidget {
   final Pregunta pregunta;
-  appDialog({super.key, required this.pregunta});
+  const appDialog({super.key, required this.pregunta});
 
   @override
   State<appDialog> createState() => _appDialogState();
 }
 
 class _appDialogState extends State<appDialog> {
-  bool isButtonVisible = true;
-
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -62,13 +60,7 @@ class _appDialogState extends State<appDialog> {
           bottom: 170, // Separación de la parte inferior
           left: MediaQuery.of(context).size.width *
               0.12, // Asumiendo que deseas centrarlo
-          child: 
-          
-          
-          Visibility(
-            visible: true,
-            child: 
-          Column(
+          child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
@@ -99,14 +91,14 @@ class _appDialogState extends State<appDialog> {
                     if (widget.pregunta.respuesta1.correcta) {
                       Navigator.of(context).push(createRoute(
                         context,
-                        RouteRightAnswer(
+                        Route4(
                           respuesta: widget.pregunta.respuesta1,
                         ),
                       ));
                     } else {
                       Navigator.of(context).push(createRoute(
                         context,
-                        RouteRightAnswer(
+                        Route5(
                           respuesta: widget.pregunta.respuesta1,
                         ),
                       ));
@@ -152,14 +144,14 @@ class _appDialogState extends State<appDialog> {
                     if (widget.pregunta.respuesta2.correcta) {
                       Navigator.of(context).push(createRoute(
                         context,
-                        RouteWrongAnswer(
+                        Route4(
                           respuesta: widget.pregunta.respuesta2,
                         ),
                       ));
                     } else {
                       Navigator.of(context).push(createRoute(
                         context,
-                        RouteWrongAnswer(
+                        Route5(
                           respuesta: widget.pregunta.respuesta2,
                         ),
                       ));
@@ -179,15 +171,10 @@ class _appDialogState extends State<appDialog> {
             ],
           ),
         ),
-        ),
       ],
     );
   }
 }
-
-
-
-
 
 // Para mostrar las cajas sucesivamente
 

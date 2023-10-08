@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
+import 'package:metrovalencia/Clases/enunciado.dart';
+import 'package:metrovalencia/titanInfo.dart';
 import 'HomeView.dart';
 import 'StartGame.dart';
 import 'InfoView.dart';
@@ -59,12 +61,21 @@ class _NavigationExampleState extends State<NavigationExample> {
             icon: Icon(Icons.help),
             label: 'More information',
           ),
+          NavigationDestination(
+            selectedIcon: Icon(Icons.info_sharp),
+            icon: Icon(Icons.info),
+            label: 'More bout Titan',
+          ),
         ],
       ),
       body: <Widget>[
         HomeView(),
-        StartGame(),
+        StartGame(
+          enunciado: Enunciado(frases: ['frase1', 'frase2']),
+          tieneTexto: true,
+        ),
         InfoView(),
+        titanInfo(),
 
         /*
 

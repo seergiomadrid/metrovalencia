@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import 'dart:async';
@@ -6,14 +5,21 @@ import 'package:flutter/material.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 
-
-
 class AnimatedTextWidget extends StatefulWidget {
-  final String text;
+  String text;
   AnimatedTextWidget({required this.text});
 
   @override
   _AnimatedTextWidgetState createState() => _AnimatedTextWidgetState();
+
+  // Nuevo método para crear una clave global para el widget
+  static final GlobalKey<_AnimatedTextWidgetState> _animatedTextKey =
+      GlobalKey<_AnimatedTextWidgetState>();
+
+  // Nuevo método para actualizar el texto desde fuera de la clase
+  void updateText(String newText) {
+    _animatedTextKey.currentState?.updateText(newText);
+  }
 }
 
 class _AnimatedTextWidgetState extends State<AnimatedTextWidget> {
@@ -42,6 +48,16 @@ class _AnimatedTextWidgetState extends State<AnimatedTextWidget> {
     });
   }
 
+  // Método para actualizar el texto desde fuera de la clase
+  void updateText(String newText) {
+    setState(() {
+      widget.text = newText;
+      letters = widget.text.split('');
+      textIndex = 0;
+      animateText();
+    });
+  }
+
   @override
   void dispose() {
     timer.cancel();
@@ -50,7 +66,7 @@ class _AnimatedTextWidgetState extends State<AnimatedTextWidget> {
 
   @override
   Widget build(BuildContext context) {
-    final visibleLetters = letters.take(textIndex).join();
+    String visibleLetters = letters.take(textIndex).join();
 
     return Center(
       child: Text(
@@ -62,4 +78,3 @@ class _AnimatedTextWidgetState extends State<AnimatedTextWidget> {
     );
   }
 }
-
