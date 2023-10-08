@@ -39,13 +39,13 @@ class _NavigationExampleState extends State<NavigationExample> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: NavigationBar(
-        backgroundColor: Color.fromARGB(255, 237, 182, 162),
+        backgroundColor: Color.fromARGB(255, 211, 207, 205),
         onDestinationSelected: (int index) {
           setState(() {
             currentPageIndex = index;
           });
         },
-        indicatorColor: const Color.fromARGB(255, 185, 136, 73),
+        indicatorColor: Color.fromARGB(165, 27, 11, 88),
         selectedIndex: currentPageIndex,
         destinations: const <Widget>[
           NavigationDestination(
@@ -67,7 +67,12 @@ class _NavigationExampleState extends State<NavigationExample> {
       body: <Widget>[
         HomeView(),
         notStarted(
-          enunciado: Enunciado(frases: ['frase1', 'frase2']),
+          enunciado: Enunciado(frases: [
+            "As Earth's final days loom, darkness and despair spread. ",
+            "With resources dwindling, hope seems like a distant star. However, a glimmer emerges. ",
+            "Scientists, after scouring the galaxy, have their sights set on Titan, Saturn's largest moon.",
+            " The journey won't be easy, but with your guidance, we might just find our new home."
+          ]),
           tieneTexto: false, // CAMBIADOO
         ),
         titanInfo(),

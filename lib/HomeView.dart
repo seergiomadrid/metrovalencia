@@ -6,14 +6,14 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      /*appBar: AppBar(
         title: Text('Home'),
-      ),
+      ),*/
       body:Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('TitanCityMain.PNG'),
-            fit: BoxFit.cover,
+            image: AssetImage('fondoTitanautsBueno.png'),
+            fit: BoxFit.fill,
           ),
         ),
       ),
