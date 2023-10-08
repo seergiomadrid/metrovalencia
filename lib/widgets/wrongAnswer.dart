@@ -21,7 +21,7 @@ class wrongAnswer extends StatelessWidget {
           left: MediaQuery.of(context).size.width *
               0.12, // Asumiendo que deseas centrarlo
           child: Container(
-            padding: EdgeInsets.all(30),
+            padding: const EdgeInsets.all(30),
             width: MediaQuery.of(context).size.width *
                 0.75, // Tomará el 50% del ancho de la pantalla
             decoration: BoxDecoration(
@@ -60,7 +60,7 @@ class wrongAnswer extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                padding: EdgeInsets.all(20),
+                padding: const EdgeInsets.all(20),
                 width: MediaQuery.of(context).size.width *
                     0.75, // Ancho del cuadro de texto
                 decoration: BoxDecoration(
@@ -90,12 +90,11 @@ class wrongAnswer extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 20), // Espacio entre los cuadros de texto
+              const SizedBox(height: 20), // Espacio entre los cuadros de texto
             ],
           ),
         ),
       ],
     );
-    ;
   }
 }

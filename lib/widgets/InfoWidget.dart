@@ -1,19 +1,12 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter/services.dart';
-
-import 'package:url_launcher/url_launcher.dart';
-
-import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
-
 Widget Info(BuildContext context, url) {
   return MaterialApp(
     home: Scaffold(
       appBar: AppBar(
-        title: Text('UrlLauncher Example'),
+        title: const Text('UrlLauncher Example'),
       ),
-      body: Center(
+      body: const Center(
         child: UrlLauncherWidget(),
       ),
     ),
@@ -21,7 +14,9 @@ Widget Info(BuildContext context, url) {
 }
 
 class UrlLauncherWidget extends StatelessWidget {
-  final String url = 'https://www.nasa.gov/hrp'; // Replace with your URL
+  final String url = 'https://www.nasa.gov/hrp';
+
+  const UrlLauncherWidget({super.key}); // Replace with your URL
 
   @override
   Widget build(BuildContext context) {

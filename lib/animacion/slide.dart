@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:metrovalencia/Clases/Pregunta.dart';
-import 'package:metrovalencia/widgets/appDialog.dart';
 
 Route createRoute(BuildContext context, Widget nextPage) {
   return PageRouteBuilder(

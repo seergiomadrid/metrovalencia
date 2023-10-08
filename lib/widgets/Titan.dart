@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:metrovalencia/Clases/Pregunta.dart';
-import 'package:metrovalencia/Clases/Respuesta.dart';
 import 'package:metrovalencia/GameFlow.dart';
 import 'package:metrovalencia/widgets/ArrowBackGame.dart';
 import 'package:metrovalencia/widgets/ArrowForwardGame.dart';
-import 'package:metrovalencia/widgets/coheteGrande.dart';
 
 class titan extends StatefulWidget {
   final String path;

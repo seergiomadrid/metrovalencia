@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:metrovalencia/GameFlow.dart';
-import 'package:metrovalencia/widgets/ArrowBackGame.dart';
-import 'package:metrovalencia/widgets/ArrowForwardGame.dart';
 
 class coheteGrande extends StatelessWidget {
   const coheteGrande({super.key});
@@ -46,16 +43,14 @@ class coheteGrande extends StatelessWidget {
         // arrowBackGame(context),
         // arrowForwardGame(context, const ThirdRoute())
       ),
-       Positioned(
+      Positioned(
         bottom: 100,
         left: 0,
         right: 0,
         child: Center(
           child: Text(
             "Let's go!",
-            style: GoogleFonts.orbitron(
-            fontSize: 40,
-            color: Colors.white),
+            style: GoogleFonts.orbitron(fontSize: 40, color: Colors.white),
           ),
         ),
       )

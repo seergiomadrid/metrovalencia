@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:metrovalencia/Clases/enunciado.dart';
-import 'package:metrovalencia/widgets/ArrowBackGame.dart';
 import 'package:metrovalencia/widgets/ArrowForwardGame.dart';
-import 'package:metrovalencia/widgets/appDialog.dart';
-import 'package:metrovalencia/widgets/coheteGrande.dart';
 import 'package:metrovalencia/widgets/dialogoHistoria.dart';
 import 'package:metrovalencia/widgets/mainMenu.dart';
 import 'GameFlow.dart';
-
-import 'widgets/AnimateText.dart';
 
 class StartGame extends StatefulWidget {
   final Enunciado enunciado;

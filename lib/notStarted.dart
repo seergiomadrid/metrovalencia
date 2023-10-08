@@ -1,18 +1,14 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:metrovalencia/Clases/enunciado.dart';
 import 'package:metrovalencia/StartGame.dart';
 import 'package:metrovalencia/animacion/noAnimation.dart';
-import 'package:metrovalencia/animacion/slide.dart';
-import 'package:metrovalencia/widgets/ArrowBackGame.dart';
 import 'package:metrovalencia/widgets/ArrowForwardGame.dart';
-import 'package:metrovalencia/widgets/appDialog.dart';
-import 'package:metrovalencia/widgets/coheteGrande.dart';
 import 'package:metrovalencia/widgets/dialogoHistoria.dart';
 import 'package:metrovalencia/widgets/mainMenu.dart';
 import 'package:metrovalencia/widgets/mainMenuFalso.dart';
 import 'GameFlow.dart';
-
-import 'widgets/AnimateText.dart';
 
 class notStarted extends StatefulWidget {
   final Enunciado enunciado;
@@ -53,7 +49,7 @@ class _notStartedState extends State<notStarted> {
                     backgroundColor: MaterialStateProperty.all<Color>(
                         Colors.black), // Cambia al color que desees
                   ),
-                  child: Text("Start the adventure"),
+                  child: const Text("Start the adventure"),
                   onPressed: () {
                     Navigator.of(context).pushReplacement(
                       NoAnimationPageRoute(

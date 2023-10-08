@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:metrovalencia/Clases/enunciado.dart';
-import 'package:metrovalencia/GameFlow.dart';
 import 'package:metrovalencia/StartGame.dart';
 import 'package:metrovalencia/animacion/noAnimation.dart';
 import 'package:metrovalencia/widgets/AnimateText.dart';
@@ -9,7 +8,7 @@ import 'package:metrovalencia/widgets/AnimateText.dart';
 class dialogoHistoria extends StatefulWidget {
   final Enunciado enunciado;
 
-  dialogoHistoria({super.key, required this.enunciado});
+  const dialogoHistoria({super.key, required this.enunciado});
 
   @override
   State<dialogoHistoria> createState() => _dialogoHistoriaState();
@@ -94,7 +93,7 @@ class _dialogoHistoriaState extends State<dialogoHistoria> {
                         // );
                       }
                     },
-                    child: Text("Next"),
+                    child: const Text("Next"),
                   ),
                 )
               ],

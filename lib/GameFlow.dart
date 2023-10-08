@@ -1,7 +1,8 @@
+// ignore_for_file: unused_local_variable
+
 import 'package:flutter/material.dart';
 import 'package:metrovalencia/Clases/Pregunta.dart';
 import 'package:metrovalencia/Clases/Respuesta.dart';
-import 'package:metrovalencia/animacion/slide.dart';
 import 'package:metrovalencia/widgets/AnimateText.dart';
 import 'package:metrovalencia/widgets/coheteGrande.dart';
 import 'package:metrovalencia/widgets/correctAnswer.dart';
@@ -19,9 +20,6 @@ class FirstRoute extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Size screenSize = MediaQuery.of(context).size;
-    final double screenWidth = screenSize.width;
-    final double screenHeight = screenSize.height;
     return Scaffold(
       appBar: AppBar(
         title: const Text('First Route'),
@@ -48,10 +46,6 @@ class SecondRoute extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Size screenSize = MediaQuery.of(context).size;
-    final double screenWidth = screenSize.width;
-    final double screenHeight = screenSize.height;
-
     return Scaffold(
         body: Stack(children: <Widget>[
       Container(
@@ -63,8 +57,8 @@ class SecondRoute extends StatelessWidget {
         ),
       ),
 
-      coheteGrande(),
-      arrowForwardGame(context, RouteTitan1(), true),
+      const coheteGrande(),
+      arrowForwardGame(context, const RouteTitan1(), true),
       arrowBackGame(context),
 
       // Center(
@@ -100,7 +94,6 @@ class RouteTitan1 extends StatelessWidget {
     );
     final Size screenSize = MediaQuery.of(context).size;
     final double screenWidth = screenSize.width;
-    final double screenHeight = screenSize.height;
 
     return Scaffold(
       body: Stack(children: <Widget>[

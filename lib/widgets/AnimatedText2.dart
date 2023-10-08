@@ -1,12 +1,8 @@
-
 import 'package:flutter/material.dart';
 
 import 'dart:async';
-import 'package:flutter/material.dart';
 
 import 'package:google_fonts/google_fonts.dart';
-
-
 
 class AnimatedText2Widget extends StatefulWidget {
   final String text;
@@ -29,7 +25,7 @@ class _AnimatedTextWidgetState extends State<AnimatedText2Widget> {
   }
 
   void animateText() {
-    const duration = const Duration(milliseconds: 100);
+    const duration = Duration(milliseconds: 100);
 
     timer = Timer.periodic(duration, (Timer timer) {
       if (textIndex < letters.length) {
@@ -50,19 +46,20 @@ class _AnimatedTextWidgetState extends State<AnimatedText2Widget> {
 
   @override
   Widget build(BuildContext context) {
-  final visibleLetters = letters.take(textIndex).join();
+    final visibleLetters = letters.take(textIndex).join();
 
-  return Padding(
-    padding: EdgeInsets.only(top: 200.0), // Agrega espacio superior de 100.0 puntos
-    child: Center(
-      child: Text(
-        visibleLetters,
-        style: GoogleFonts.orbitron(
-          fontSize: 44,
-          color: Colors.white,
+    return Padding(
+      padding: const EdgeInsets.only(
+          top: 200.0), // Agrega espacio superior de 100.0 puntos
+      child: Center(
+        child: Text(
+          visibleLetters,
+          style: GoogleFonts.orbitron(
+            fontSize: 44,
+            color: Colors.white,
+          ),
         ),
       ),
-    ),
-  );
+    );
   }
 }

@@ -1,14 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
 import 'package:metrovalencia/Clases/enunciado.dart';
 import 'package:metrovalencia/notStarted.dart';
 import 'package:metrovalencia/titanInfo.dart';
 import 'HomeView.dart';
-import 'StartGame.dart';
-import 'InfoView.dart';
-import 'package:metrovalencia/widgets/MainMenu.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 void main() => runApp(const NavigationBarApp());
 
@@ -39,13 +33,13 @@ class _NavigationExampleState extends State<NavigationExample> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: NavigationBar(
-        backgroundColor: Color.fromARGB(255, 211, 207, 205),
+        backgroundColor: const Color.fromARGB(255, 211, 207, 205),
         onDestinationSelected: (int index) {
           setState(() {
             currentPageIndex = index;
           });
         },
-        indicatorColor: Color.fromARGB(165, 27, 11, 88),
+        indicatorColor: const Color.fromARGB(165, 27, 11, 88),
         selectedIndex: currentPageIndex,
         destinations: const <Widget>[
           NavigationDestination(
@@ -65,7 +59,7 @@ class _NavigationExampleState extends State<NavigationExample> {
         ],
       ),
       body: <Widget>[
-        HomeView(),
+        const HomeView(),
         notStarted(
           enunciado: Enunciado(frases: [
             "As Earth's final days loom, darkness and despair spread. ",

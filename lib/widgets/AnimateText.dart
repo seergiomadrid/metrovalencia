@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 
 import 'dart:async';
-import 'package:flutter/material.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 
 class AnimatedTextWidget extends StatefulWidget {
   String text;
-  AnimatedTextWidget({required this.text});
+  AnimatedTextWidget({super.key, required this.text});
 
   @override
   _AnimatedTextWidgetState createState() => _AnimatedTextWidgetState();
@@ -35,7 +34,7 @@ class _AnimatedTextWidgetState extends State<AnimatedTextWidget> {
   }
 
   void animateText() {
-    const duration = const Duration(milliseconds: 100);
+    const duration = Duration(milliseconds: 100);
 
     timer = Timer.periodic(duration, (Timer timer) {
       if (textIndex < letters.length) {
@@ -69,12 +68,11 @@ class _AnimatedTextWidgetState extends State<AnimatedTextWidget> {
     String visibleLetters = letters.take(textIndex).join();
 
     return Center(
-      child: Text(
-        visibleLetters,
-        style: GoogleFonts.orbitron(
-                fontSize: 20,
-                color: Colors.white,)
-      ),
+      child: Text(visibleLetters,
+          style: GoogleFonts.orbitron(
+            fontSize: 20,
+            color: Colors.white,
+          )),
     );
   }
 }
