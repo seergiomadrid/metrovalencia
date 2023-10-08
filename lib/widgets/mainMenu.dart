@@ -45,16 +45,6 @@ class _mainMenuState extends State<mainMenu> {
               )
             ],
           ),
-          ElevatedButton(
-             style: ButtonStyle(
-    backgroundColor: MaterialStateProperty.all<Color>(Colors.black), // Change to the color you want
-  ),
-            child: Text("Start the adventure"),
-            onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => SecondRoute()));
-            },
-          )
         ],
       ),
     );

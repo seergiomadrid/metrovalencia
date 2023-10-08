@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:metrovalencia/animacion/noAnimation.dart';
 import 'package:metrovalencia/animacion/slide.dart';
 
 Widget arrowForwardGame(
@@ -22,8 +23,11 @@ Widget arrowForwardGame(
                   if (slide) {
                     Navigator.of(context).push(createRoute(context, nextPage));
                   } else {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: ((context) => nextPage)));
+                    Navigator.of(context).pushReplacement(
+                      NoAnimationPageRoute(
+                        builder: (context) => nextPage,
+                      ),
+                    );
                   }
                 },
               ),
