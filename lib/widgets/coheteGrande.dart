@@ -8,7 +8,7 @@ class coheteGrande extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Stack(children: [Container(
       width: MediaQuery.of(context).size.width,
       decoration: const BoxDecoration(
         image: DecorationImage(
@@ -43,6 +43,16 @@ class coheteGrande extends StatelessWidget {
       ),
       // arrowBackGame(context),
       // arrowForwardGame(context, const ThirdRoute())
-    );
+    ), 
+    
+    Positioned(
+          bottom: 100,
+          right: 600,
+          child: Text(
+                  'Vamos!',
+            style: TextStyle(color: Colors.white,fontSize: 40),
+                  
+                  ),
+        )]);
   }
 }

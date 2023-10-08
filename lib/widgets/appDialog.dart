@@ -53,7 +53,7 @@ class _appDialogState extends State<appDialog> {
                 ],
               ),
               child: AnimatedTextWidget(
-                text: "Esta es la pregunta : ${widget.pregunta.enunciado}",
+                text: "${widget.pregunta.enunciado}",
               )),
         ),
         Positioned(

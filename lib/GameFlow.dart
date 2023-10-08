@@ -85,11 +85,11 @@ class RouteTitan1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Pregunta preguntaTitan1 = Pregunta(
-      enunciado: "enunciadoTitan1",
+      enunciado: "Before anything, Titan's freezing temperatures need to be addressed. How do we bring warmth?",
       respuesta1: Respuesta(
-          enunciado: "Respuesta1", correcta: true, feedback: "feedback1"),
+          enunciado: "Set up orbital mirrors to amplify sunlight.", correcta: true, feedback: "Amazing choice! Harnessing the sun's energy through orbital mirrors, we can magnify sunlight and accelerate the warming process. Slowly, the thick icy crust begins to melt, revealing the potential underneath."),
       respuesta2: Respuesta(
-          enunciado: "Respuesta1", correcta: false, feedback: "feedback1"),
+          enunciado: "Trigger artificial volcanic eruptions.", correcta: false, feedback: "Volcanic activity, while intriguing, is unpredictable. It could lead to catastrophic consequences. The sun, on the other hand, offers a steady, gradual warmth."),
     );
     final Size screenSize = MediaQuery.of(context).size;
     final double screenWidth = screenSize.width;
@@ -142,11 +142,11 @@ class RouteTitan2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Pregunta preguntaTitan2 = Pregunta(
-      enunciado: "enunciadoTitan2",
+      enunciado: "A thriving civilization needs energy. What should be our main power source?",
       respuesta1: Respuesta(
-          enunciado: "Respuesta2", correcta: true, feedback: "feedback2"),
+          enunciado: "Construct wind turbines across the landscape.", correcta: false, feedback: "Wind, though present, is erratic. Reliability is essential, and sunlight, even if faint, provides consistency."),
       respuesta2: Respuesta(
-          enunciado: "Respuesta2", correcta: false, feedback: "feedback2"),
+          enunciado: "Deploy next-gen solar panels tailored for low light.", correcta: true, feedback: "Perfect! Given Titan's distance from the Sun, conventional panels won't work. However, next-gen panels, designed for such environments, can efficiently capture and convert even the faintest sunlight into energy, setting the groundwork for our future endeavors."),
     );
     final Size screenSize = MediaQuery.of(context).size;
     final double screenWidth = screenSize.width;
@@ -223,8 +223,7 @@ class RoutePreguntas extends StatelessWidget {
 
 class RouteRightAnswer extends StatelessWidget {
   final Respuesta respuesta;
-  final StatelessWidget nextPage;
-  const RouteRightAnswer({super.key, required this.respuesta,required this.nextPage});
+  const RouteRightAnswer({super.key, required this.respuesta});
 
   @override
   Widget build(BuildContext context) {
@@ -242,8 +241,7 @@ class RouteRightAnswer extends StatelessWidget {
 
 class RouteWrongAnswer extends StatelessWidget {
   final Respuesta respuesta;
-  final StatelessWidget nextPage;
-  const RouteWrongAnswer({super.key, required this.respuesta, required this.nextPage});
+  const RouteWrongAnswer({super.key, required this.respuesta});
 
   @override
   Widget build(BuildContext context) {
@@ -253,8 +251,8 @@ class RouteWrongAnswer extends StatelessWidget {
         ),
         body: Stack(children: <Widget>[
           wrongAnswer(respuesta: respuesta),
-          arrowBackGame(context),
-          arrowForwardGame(context, const RouteTitan2(), true)
+          //arrowBackGame(context),
+          arrowForwardGame(context, const RouteTitan1(), true)
         ]));
   }
 }
