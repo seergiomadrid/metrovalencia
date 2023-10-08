@@ -228,9 +228,10 @@ class RouteRightAnswer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      /*
         appBar: AppBar(
           title: const Text('Route Right'),
-        ),
+        ),*/
         body: Stack(children: <Widget>[
           correctAnswer(respuesta: respuesta),
           arrowBackGame(context),
