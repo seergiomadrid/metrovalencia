@@ -105,7 +105,7 @@ class _appDialogState extends State<appDialog> {
                     }
                   },
                   child: Text(
-                    "A. ${widget.pregunta.respuesta1.enunciado}}",
+                    "A. ${widget.pregunta.respuesta1.enunciado}",
                     style: GoogleFonts.orbitron(
                       fontSize: 18,
                       color:
@@ -158,7 +158,7 @@ class _appDialogState extends State<appDialog> {
                     }
                   },
                   child: Text(
-                    "B. ${widget.pregunta.respuesta2.enunciado}}",
+                    "B. ${widget.pregunta.respuesta2.enunciado}",
                     style: GoogleFonts.orbitron(
                       fontSize: 18,
                       color:
