@@ -15,7 +15,7 @@ class StartGame extends StatelessWidget {
       body: Stack(
         children: [
           const mainMenu(),
-          arrowForwardGame(context, const SecondRoute()),
+          arrowForwardGame(context, const SecondRoute(), false),
           arrowBackGame(context),
           ElevatedButton(
             child: const Text('Open route'),
