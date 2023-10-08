@@ -7,10 +7,10 @@ import 'package:metrovalencia/widgets/correctAnswer.dart';
 
 import 'AnimateText.dart';
 
-Widget appDialog(BuildContext context, Pregunta pregunta) {
+StatefulWidget appDialog(BuildContext context, Pregunta pregunta, bool isButtonVisible){
   // Maybe use this: String question, String answer1, nextPage1
-
-  return Stack(
+  bool isButtonVisible = false;
+  Stack s= new Stack(
     children: [
       Positioned.fill(
         child: Image.network(
@@ -48,11 +48,16 @@ Widget appDialog(BuildContext context, Pregunta pregunta) {
               text: "Esta es la pregunta : ${pregunta.enunciado}",
             )),
       ),
+
+
+
       Positioned(
         bottom: 170, // Separación de la parte inferior
         left: MediaQuery.of(context).size.width *
             0.12, // Asumiendo que deseas centrarlo
-        child: Column(
+        child: Visibility(
+          visible: isButtonVisible,
+          child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
@@ -78,7 +83,12 @@ Widget appDialog(BuildContext context, Pregunta pregunta) {
                 ],
               ),
 
-              child: ElevatedButton(
+
+
+              child: 
+              Visibility(
+                visible: isButtonVisible,
+                child: ElevatedButton(
                 onPressed: () {
                   if (pregunta.respuesta1.correcta) {
                     Navigator.of(context).push(createRoute(
@@ -104,6 +114,7 @@ Widget appDialog(BuildContext context, Pregunta pregunta) {
                     // Cambiado a Arial como ejemplo. Deberías escoger y añadir una fuente que te guste.
                   ),
                 ),
+              ),
               ),
             ),
             SizedBox(height: 20),
@@ -160,9 +171,19 @@ Widget appDialog(BuildContext context, Pregunta pregunta) {
             ),
           ],
         ),
+
+        ),
+
       ),
     ],
   );
+
+return s;
+}
+
+
+
+
 
 // Para mostrar las cajas sucesivamente
 
@@ -261,4 +282,4 @@ class _DelayedBoxListState extends State<DelayedBoxList> {
         ),
       ),
     );*/
-}
+
