@@ -17,7 +17,7 @@ class _mainMenuState extends State<mainMenu> {
       decoration: const BoxDecoration(
         image: DecorationImage(
           image: AssetImage(
-              'ELPERCU_wide_1.png'), // Replace with your image asset path
+              'assets/assetsHubbleLegacyField.png'), // Replace with your image asset path
           fit: BoxFit.cover, // You can adjust the fit mode as needed
         ),
       ),
@@ -46,7 +46,10 @@ class _mainMenuState extends State<mainMenu> {
             ],
           ),
           ElevatedButton(
-            child: Text("siguietne"),
+             style: ButtonStyle(
+    backgroundColor: MaterialStateProperty.all<Color>(Colors.black), // Change to the color you want
+  ),
+            child: Text("Start the adventure"),
             onPressed: () {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => SecondRoute()));

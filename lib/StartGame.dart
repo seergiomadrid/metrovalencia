@@ -39,7 +39,6 @@ class _StartGameState extends State<StartGame> {
         ),
       );
     } else {
-      print("asdfsdsagsgggs");
       return Scaffold(
         body: Stack(
           children: [
