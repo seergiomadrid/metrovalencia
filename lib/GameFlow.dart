@@ -32,7 +32,7 @@ class FirstRoute extends StatelessWidget {
           ),
         ),
         arrowBackGame(context),
-        arrowForwardGame(context, const SecondRoute())
+        arrowForwardGame(context, const SecondRoute(), false)
       ]),
     );
   }
@@ -59,7 +59,7 @@ class SecondRoute extends StatelessWidget {
       ),
 
       coheteGrande(),
-      arrowForwardGame(context, ThirdRoute()),
+      arrowForwardGame(context, ThirdRoute(), true),
       arrowBackGame(context),
       ElevatedButton(
         child: const Text('Open route'),
