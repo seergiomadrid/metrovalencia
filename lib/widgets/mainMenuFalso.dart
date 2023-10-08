@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:metrovalencia/GameFlow.dart';
 import 'package:metrovalencia/widgets/coheteGrande.dart';
 
-class mainMenu extends StatefulWidget {
-  const mainMenu({super.key});
+class mainMenuFalso extends StatefulWidget {
+  const mainMenuFalso({super.key});
 
   @override
-  State<mainMenu> createState() => _mainMenuState();
+  State<mainMenuFalso> createState() => _mainMenuFalsoState();
 }
 
-class _mainMenuState extends State<mainMenu> {
+class _mainMenuFalsoState extends State<mainMenuFalso> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -31,17 +31,11 @@ class _mainMenuState extends State<mainMenu> {
             children: [
               SizedBox(
                 height: 500,
-                child: Hero(
-                  tag: 'imageTierra',
-                  child: Image.asset('assets/tierra.png'),
-                ),
+                child: Image.asset('assets/tierra.png'),
               ),
               SizedBox(
                 height: 150,
-                child: Hero(
-                  tag: 'imageCohete',
-                  child: Image.asset('assets/cohete.png'),
-                ),
+                child: Image.asset('assets/cohete.png'),
               )
             ],
           ),

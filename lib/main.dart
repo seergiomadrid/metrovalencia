@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:metrovalencia/Clases/enunciado.dart';
+import 'package:metrovalencia/notStarted.dart';
 import 'package:metrovalencia/titanInfo.dart';
 import 'HomeView.dart';
 import 'StartGame.dart';
@@ -58,14 +59,14 @@ class _NavigationExampleState extends State<NavigationExample> {
           ),
           NavigationDestination(
             selectedIcon: Icon(Icons.info),
-            icon: Icon(Icons.help), 
+            icon: Icon(Icons.help),
             label: 'More about Titan',
           ),
         ],
       ),
       body: <Widget>[
         HomeView(),
-        StartGame(
+        notStarted(
           enunciado: Enunciado(frases: ['frase1', 'frase2']),
           tieneTexto: false, // CAMBIADOO
         ),
