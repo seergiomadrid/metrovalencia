@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:metrovalencia/widgets/AnimateText.dart';
 import 'package:metrovalencia/widgets/AnimatedText2.dart';
 import 'package:metrovalencia/widgets/InfoWidget.dart';
+import 'package:metrovalencia/widgets/linkUrl.dart';
 
 
 class titanInfo extends StatelessWidget {
@@ -168,14 +169,17 @@ Widget createContainerWithText(
               40,
               ),
               createContainerWithText(
-            "LINK HERE.",
-            Colors.blue[900] ?? Colors.blue,
-            80,
-            GoogleFonts.orbitron(),
-            Colors.black, // Agrega el color del borde aquí
-              2.0, 
-              18,
+              "Visita mi perfil en Twitter",
+              Color.fromARGB(255, 0, 28, 69) ?? Colors.blue,
+              150,
+              GoogleFonts.orbitron(),
+              Colors.black, // Agrega el color del borde aquí
+              2.0,
+              40,
               ),
+              linkURL(context, 'https://science.nasa.gov/saturn/moons/titan/',
+              ), // Llama a la función linkURL aquí
+        
             createContainerWithText(
             " About us.",
             Color.fromARGB(255, 0, 28, 69) ?? Colors.blue,
