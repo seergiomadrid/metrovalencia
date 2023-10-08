@@ -38,13 +38,13 @@ class _NavigationExampleState extends State<NavigationExample> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: NavigationBar(
-        backgroundColor: Color.fromARGB(255, 237, 182, 162),
+        backgroundColor: Color.fromARGB(255, 211, 207, 205),
         onDestinationSelected: (int index) {
           setState(() {
             currentPageIndex = index;
           });
         },
-        indicatorColor: const Color.fromARGB(255, 185, 136, 73),
+        indicatorColor: Color.fromARGB(165, 27, 11, 88),
         selectedIndex: currentPageIndex,
         destinations: const <Widget>[
           NavigationDestination(

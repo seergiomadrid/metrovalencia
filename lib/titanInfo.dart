@@ -1,9 +1,11 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:metrovalencia/widgets/AnimateText.dart';
 import 'package:metrovalencia/widgets/AnimatedText2.dart';
 import 'package:metrovalencia/widgets/InfoWidget.dart';
 import 'package:metrovalencia/widgets/linkUrl.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 
 class titanInfo extends StatelessWidget {
@@ -39,7 +41,7 @@ Widget createContainerWithText(
         color: color,
         border: Border.all(
           color: borderColor ?? Colors.black, // Color de borde (verde por defecto)
-          width: borderWidth ?? 2.0, // Ancho de borde (0.0 por defecto, sin borde)
+          width: borderWidth ?? 3.0, // Ancho de borde (0.0 por defecto, sin borde)
         ),
       ),
       height: height,
@@ -55,6 +57,23 @@ Widget createContainerWithText(
     );
   }
 
+Widget linkContainerWithURL(BuildContext context, String text, String url) {
+  return InkWell(
+    onTap: () {
+      launchUrlString(url); // Asegúrate de que esta función está implementada correctamente
+    },
+    child: createContainerWithText(
+      text,
+    Color.fromARGB(255, 0, 28, 69) ?? Colors.blue,
+      150,
+      GoogleFonts.orbitron(),
+      Colors.black,
+      3.0,
+      40,
+    ),
+  );
+}
+
 
   @override
   Widget build(BuildContext context) {
@@ -62,17 +81,31 @@ Widget createContainerWithText(
       slivers: <Widget>[
         
       SliverAppBar(
-        pinned: true,
-        expandedHeight: 300.0,
-        flexibleSpace: FlexibleSpaceBar(
-          background: Image.asset(
-            'assets/littleAngel.jpg', // Replace with your image path
-            fit: BoxFit.cover, // You can adjust the fit mode as needed
+  pinned: true,
+  expandedHeight: 300.0,
+  flexibleSpace: FlexibleSpaceBar(
+    background: Stack(
+      fit: StackFit.expand,
+      children: <Widget>[
+        Image.asset(
+          'assets/assetsHubbleLegacyField.png',
+          fit: BoxFit.cover,
+        ),
+        Positioned(
+          left: 0,
+          right: 0,
+          bottom: 0,
+          child: Container(
+            height: 3, // Esto es el grosor del borde
+            color: Colors.black, // Este es el color del borde
           ),
-          title: AnimatedText2Widget(text:'Find out more about Titan!', ),
+        ),
+      ],
+    ),
+    title: AnimatedText2Widget(text: 'Find out more about Titan!'),
+  ),
+),
 
-          ),
-      ),
       
       SliverList(
         delegate: SliverChildListDelegate(
@@ -84,7 +117,7 @@ Widget createContainerWithText(
             150,
             GoogleFonts.orbitron(),
             Colors.black, // Agrega el color del borde aquí
-              2.0,
+              3.0,
               40,
               ),
               createContainerWithText(
@@ -93,7 +126,7 @@ Widget createContainerWithText(
             80,
             GoogleFonts.orbitron(),
             Colors.black, // Agrega el color del borde aquí
-              2.0, 
+              3.0, 
               22,
               ),
               createContainerWithText(
@@ -102,7 +135,7 @@ Widget createContainerWithText(
             80,
             GoogleFonts.orbitron(),
             Colors.black, // Agrega el color del borde aquí
-              2.0,
+              3.0,
               22,
               ),
               createContainerWithText(
@@ -111,7 +144,7 @@ Widget createContainerWithText(
             80,
             GoogleFonts.orbitron(),
             Colors.black, // Agrega el color del borde aquí
-              2.0,
+              3.0,
               22,
               ),
               createContainerWithText(
@@ -120,7 +153,7 @@ Widget createContainerWithText(
             80,
             GoogleFonts.orbitron(),
             Colors.black, // Agrega el color del borde aquí
-              2.0,
+              3.0,
               22,
               ),
               createContainerWithText(
@@ -129,7 +162,7 @@ Widget createContainerWithText(
             80,
             GoogleFonts.orbitron(),
             Colors.black, // Agrega el color del borde aquí
-              2.0, 
+              3.0, 
               22,
               ),
               createContainerWithText(
@@ -138,7 +171,7 @@ Widget createContainerWithText(
             80,
             GoogleFonts.orbitron(),
             Colors.black, // Agrega el color del borde aquí
-              2.0, 
+              3.0, 
               22,
               ),
               createContainerWithText(
@@ -147,47 +180,26 @@ Widget createContainerWithText(
             80,
             GoogleFonts.orbitron(),
             Colors.black, // Agrega el color del borde aquí
-              2.0, 
+              3.0, 
               22,
               ),
                 createContainerWithText(
-            "8. Dragonfly is a NASA exploration probe, which will send a spacecraft with a dron to Titan, in order to study planetary habitability.",
+            "8. Dragonfly is a NASA exploration probe, which will send a spacecraft to Titan, in order to study planetary habitability.",
             Colors.blue[900] ?? Colors.blue,
             80,
             GoogleFonts.orbitron(),
             Colors.black, // Agrega el color del borde aquí
-              2.0, 
+              3.0, 
               22,
               ),
-            createContainerWithText(
-            "Visit NASA's website to learn even more about Titan.",
-            Color.fromARGB(255, 0, 28, 69) ?? Colors.blue,
-            150,
-            GoogleFonts.orbitron(),
-            Colors.black, // Agrega el color del borde aquí
-              2.0,
-              40,
-              ),
-
-              createContainerWithText(
-              "NAASA",
-              Colors.blue[900] ?? Colors.blue,
-              150,
-              GoogleFonts.orbitron(),
-              Colors.black, // Agrega el color del borde aquí
-              2.0,
-              22,
-              ),
-              linkURL(context, 'https://science.nasa.gov/saturn/moons/titan/',
-              ), // Llama a la función linkURL aquí
-        
+              linkContainerWithURL(context, "Click here to go to NASA's website to learn more about Titan", 'https://science.nasa.gov/saturn/moons/titan/'),        
             createContainerWithText(
             " About us.",
             Color.fromARGB(255, 0, 28, 69) ?? Colors.blue,
             150,
             GoogleFonts.orbitron(),
             Colors.black, // Agrega el color del borde aquí
-              2.0,
+              3.0,
               40,
               ),
             createContainerWithText(
@@ -196,7 +208,7 @@ Widget createContainerWithText(
             80,
             GoogleFonts.orbitron(),
             Colors.black, // Agrega el color del borde aquí
-              2.0, 
+              3.0, 
               18,
               ),
             Container(
