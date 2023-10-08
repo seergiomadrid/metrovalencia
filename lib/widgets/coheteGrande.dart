@@ -8,51 +8,54 @@ class coheteGrande extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(children: [Container(
-      width: MediaQuery.of(context).size.width,
-      decoration: const BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage(
-              'assetsHubbleLegacyField.png'), // Replace with your image asset path
-          fit: BoxFit.cover, // You can adjust the fit mode as needed
+    return Stack(children: [
+      Container(
+        width: MediaQuery.of(context).size.width,
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(
+                'assetsHubbleLegacyField.png'), // Replace with your image asset path
+            fit: BoxFit.cover, // You can adjust the fit mode as needed
+          ),
         ),
-      ),
-      child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            SizedBox(
-              height: 400,
-              child: Hero(
-                tag: 'imageCohete',
-                child: Image.asset('assets/cohete.png'),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(
+                height: 400,
+                child: Hero(
+                  tag: 'imageCohete',
+                  child: Image.asset('assets/cohete.png'),
+                ),
               ),
-            ),
-            const SizedBox(height: 600),
-            SizedBox(
-              height: 400,
-              child: Hero(
-                tag: 'imageTierra',
-                child: Image.asset('assets/tierra.png'),
+              const SizedBox(height: 600),
+              SizedBox(
+                height: 400,
+                child: Hero(
+                  tag: 'imageTierra',
+                  child: Image.asset('assets/tierra.png'),
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
+          // arrowBackGame(context),
+          // arrowForwardGame(context, const ThirdRoute())
         ),
         // arrowBackGame(context),
         // arrowForwardGame(context, const ThirdRoute())
       ),
-      // arrowBackGame(context),
-      // arrowForwardGame(context, const ThirdRoute())
-    ), 
-    
-    Positioned(
-          bottom: 100,
-          right: 600,
+      const Positioned(
+        bottom: 100,
+        left: 0,
+        right: 0,
+        child: Center(
           child: Text(
-                  'Vamos!',
-            style: TextStyle(color: Colors.white,fontSize: 40),
-                  
-                  ),
-        )]);
+            'Vamos!',
+            style: TextStyle(color: Colors.white, fontSize: 40),
+          ),
+        ),
+      )
+    ]);
   }
 }

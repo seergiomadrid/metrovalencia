@@ -37,7 +37,7 @@ class _StartGameState extends State<StartGame> {
           children: [
             const mainMenu(),
             arrowForwardGame(context, const SecondRoute(), false),
-            arrowBackGame(context),
+            //arrowBackGame(context),
             // Align(
             //   alignment: Alignment
             //       .bottomCenter, // Esto alinea el botón en la parte inferior y en el centro

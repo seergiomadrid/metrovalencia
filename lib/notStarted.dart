@@ -40,8 +40,8 @@ class _notStartedState extends State<notStarted> {
         body: Stack(
           children: [
             const mainMenuFalso(),
-            arrowForwardGame(context, const SecondRoute(), false),
-            arrowBackGame(context),
+            //arrowForwardGame(context, const SecondRoute(), false),
+            //arrowBackGame(context),
             Align(
               alignment: Alignment
                   .bottomCenter, // Esto alinea el botón en la parte inferior y en el centro
