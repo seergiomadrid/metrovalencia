@@ -9,6 +9,7 @@ import 'package:metrovalencia/widgets/appDialog.dart';
 import 'package:metrovalencia/widgets/coheteGrande.dart';
 import 'package:metrovalencia/widgets/dialogoHistoria.dart';
 import 'package:metrovalencia/widgets/mainMenu.dart';
+import 'package:metrovalencia/widgets/mainMenuFalso.dart';
 import 'GameFlow.dart';
 
 import 'widgets/AnimateText.dart';
@@ -38,7 +39,7 @@ class _notStartedState extends State<notStarted> {
       return Scaffold(
         body: Stack(
           children: [
-            const mainMenu(),
+            const mainMenuFalso(),
             arrowForwardGame(context, const SecondRoute(), false),
             arrowBackGame(context),
             Align(
