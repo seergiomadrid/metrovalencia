@@ -6,7 +6,8 @@ import 'package:metrovalencia/widgets/coheteGrande.dart';
 
 class titan extends StatefulWidget {
   final String path;
-  const titan({super.key,required this.path});
+  final StatelessWidget nextPage;
+  const titan({super.key,required this.path, required this.nextPage});
 
   @override
   State<titan> createState() => _titanState();
@@ -49,6 +50,6 @@ class _titanState extends State<titan> {
         ],
       ),
     ), arrowBackGame(context),
-    arrowForwardGame(context, const RoutePreguntas(), false)]);
+    arrowForwardGame(context, widget.nextPage, false)]);
   }
 }
