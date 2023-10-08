@@ -91,14 +91,14 @@ class _appDialogState extends State<appDialog> {
                     if (widget.pregunta.respuesta1.correcta) {
                       Navigator.of(context).push(createRoute(
                         context,
-                        Route4(
+                        RouteRightAnswer(
                           respuesta: widget.pregunta.respuesta1,
                         ),
                       ));
                     } else {
                       Navigator.of(context).push(createRoute(
                         context,
-                        Route5(
+                        RouteWrongAnswer(
                           respuesta: widget.pregunta.respuesta1,
                         ),
                       ));
@@ -144,14 +144,14 @@ class _appDialogState extends State<appDialog> {
                     if (widget.pregunta.respuesta2.correcta) {
                       Navigator.of(context).push(createRoute(
                         context,
-                        Route4(
+                        RouteRightAnswer(
                           respuesta: widget.pregunta.respuesta2,
                         ),
                       ));
                     } else {
                       Navigator.of(context).push(createRoute(
                         context,
-                        Route5(
+                        RouteWrongAnswer(
                           respuesta: widget.pregunta.respuesta2,
                         ),
                       ));
