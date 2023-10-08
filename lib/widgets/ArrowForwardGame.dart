@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:metrovalencia/animacion/slide.dart';
 
-Widget arrowForwardGame(BuildContext context, StatelessWidget nextPage) {
+Widget arrowForwardGame(
+    BuildContext context, StatelessWidget nextPage, bool slide) {
   return Positioned(
     top: 0,
     right: 0,
@@ -18,7 +19,12 @@ Widget arrowForwardGame(BuildContext context, StatelessWidget nextPage) {
                 icon: Icon(Icons.arrow_forward,
                     size: 50, color: const Color.fromARGB(255, 202, 153, 135)),
                 onPressed: () {
-                  Navigator.of(context).push(createRoute(context, nextPage));
+                  if (slide) {
+                    Navigator.of(context).push(createRoute(context, nextPage));
+                  } else {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: ((context) => nextPage)));
+                  }
                 },
               ),
               SizedBox(width: 20),
