@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:metrovalencia/GameFlow.dart';
 import 'package:metrovalencia/widgets/ArrowBackGame.dart';
 import 'package:metrovalencia/widgets/ArrowForwardGame.dart';
@@ -45,17 +46,31 @@ class coheteGrande extends StatelessWidget {
         // arrowBackGame(context),
         // arrowForwardGame(context, const ThirdRoute())
       ),
-      const Positioned(
+       Positioned(
         bottom: 100,
         left: 0,
         right: 0,
         child: Center(
           child: Text(
-            'Vamos!',
-            style: TextStyle(color: Colors.white, fontSize: 40),
+            "Let's go!",
+            style: GoogleFonts.orbitron(
+            fontSize: 40,
+            color: Colors.white),
           ),
         ),
       )
     ]);
   }
 }
+
+
+
+/* child: Text(
+                    "A. ${widget.pregunta.respuesta1.enunciado}}",
+                    style: GoogleFonts.orbitron(
+                      fontSize: 18,
+                      color:
+                          Colors.white, // Color de texto blanco para contraste
+                      // Cambiado a Arial como ejemplo. Deberías escoger y añadir una fuente que te guste.
+                    ),*/
+
