@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:metrovalencia/Clases/Pregunta.dart';
+import 'package:metrovalencia/Clases/Respuesta.dart';
+import 'package:metrovalencia/animacion/slide.dart';
 import 'package:metrovalencia/widgets/coheteGrande.dart';
+import 'package:metrovalencia/widgets/correctAnswer.dart';
+import 'package:metrovalencia/widgets/wrongAnswer.dart';
 import 'widgets/ArrowBackGame.dart';
 import 'widgets/ArrowForwardGame.dart';
 import 'widgets/appDialog.dart';
@@ -21,7 +26,7 @@ class FirstRoute extends StatelessWidget {
         Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('assets/main_planeta.jpg'),
+              image: AssetImage('assets/ELPERCU_wide_1.png'),
               fit: BoxFit.cover,
             ),
           ),
@@ -59,10 +64,7 @@ class SecondRoute extends StatelessWidget {
       ElevatedButton(
         child: const Text('Open route'),
         onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const FirstRoute()),
-          );
+          //Navigator.of(context).push(createRoute(context,));
         },
       ),
       // Center(
@@ -96,37 +98,54 @@ class ThirdRoute extends StatelessWidget {
             ),
           ),
         ),
-        appDialog(context, "Mi pregunta"),
-        arrowBackGame(context),
-        arrowForwardGame(context, const Route4())
+
+        appDialog(
+            context,
+            Pregunta(
+              enunciado: "enunciado",
+              respuesta1: Respuesta(
+                  enunciado: "enunciado resp",
+                  correcta: true,
+                  feedback: "Miguel Sexo SI"),
+              respuesta2: Respuesta(
+                  enunciado: "enunciado resp",
+                  correcta: false,
+                  feedback: "Miguel Sexo NO"),
+            )),
+        //arrowBackGame(context),
+        //arrowForwardGame(context, const Route4())
       ]),
     );
   }
 }
 
-
-
 class Route4 extends StatelessWidget {
-  const Route4({super.key});
+  final Respuesta respuesta;
+  const Route4({super.key, required this.respuesta});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Route 4'),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: const Text('Go back!'),
+        appBar: AppBar(
+          title: const Text('Route 4'),
         ),
-      ),
-    );
+        body: correctAnswer(respuesta: respuesta));
   }
 }
 
+class Route5 extends StatelessWidget {
+  final Respuesta respuesta;
+  const Route5({super.key, required this.respuesta});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: const Text('Route 4'),
+        ),
+        body: wrongAnswer(respuesta: respuesta));
+  }
+}
 /*
 // Within the `FirstRoute` widget
 onPressed: () {
