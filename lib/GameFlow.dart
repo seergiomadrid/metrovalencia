@@ -36,7 +36,7 @@ class FirstRoute extends StatelessWidget {
             ),
           ),
         ),
-        arrowBackGame(context),
+        //arrowBackGame(context),
         arrowForwardGame(context, const SecondRoute(), false)
       ]),
     );
@@ -66,12 +66,7 @@ class SecondRoute extends StatelessWidget {
       coheteGrande(),
       arrowForwardGame(context, RouteTitan1(), true),
       arrowBackGame(context),
-      ElevatedButton(
-        child: const Text('Open route'),
-        onPressed: () {
-          //Navigator.of(context).push(createRoute(context,));
-        },
-      ),
+
       // Center(
       //     child: Column(
       //         mainAxisAlignment: MainAxisAlignment.center,
@@ -84,22 +79,26 @@ class SecondRoute extends StatelessWidget {
   }
 }
 
-
-
 class RouteTitan1 extends StatelessWidget {
   const RouteTitan1({super.key});
 
   @override
   Widget build(BuildContext context) {
+    Pregunta preguntaTitan1 = Pregunta(
+      enunciado: "enunciadoTitan1",
+      respuesta1: Respuesta(
+          enunciado: "Respuesta1", correcta: true, feedback: "feedback1"),
+      respuesta2: Respuesta(
+          enunciado: "Respuesta1", correcta: false, feedback: "feedback1"),
+    );
     final Size screenSize = MediaQuery.of(context).size;
     final double screenWidth = screenSize.width;
     final double screenHeight = screenSize.height;
+
     return Scaffold(
       body: Stack(children: <Widget>[
-
         // Widget 1
-      
-        
+
         Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
@@ -110,26 +109,26 @@ class RouteTitan1 extends StatelessWidget {
         ),
 // WIdget 2
         Positioned(
-        top: 20,
-        right: 0.35*screenWidth,
-        child: AnimatedTextWidget(text:
-          'The surface of Titan is very icy and frigid...'
+          top: 20,
+          right: 0.35 * screenWidth,
+          child: AnimatedTextWidget(
+              text: 'The surface of Titan is very icy and frigid...'),
         ),
-      ),
-        const titan(path: 'assets/TitanBeginning.jpeg'),
+        titan(
+          path: 'assets/TitanBeginning.jpeg',
+          pregunta: preguntaTitan1,
+        ),
 
         Positioned(
-        bottom: 20,
-        right: 0.35*screenWidth,
-        child:
-        Text(
-        'Move on to solve problems and help Titan',
-        style: GoogleFonts.orbitron(
+          bottom: 20,
+          right: 0.35 * screenWidth,
+          child: Text('Move on to solve problems and help Titan',
+              style: GoogleFonts.orbitron(
                 fontSize: 20,
-                color: Colors.white,)
-      ),
-      ),
-           
+                color: Colors.white,
+              )),
+        ),
+
         //arrowBackGame(context),
         //arrowForwardGame(context, const Route4())
       ]),
@@ -137,23 +136,25 @@ class RouteTitan1 extends StatelessWidget {
   }
 }
 
-
-
-
 class RouteTitan2 extends StatelessWidget {
   const RouteTitan2({super.key});
 
   @override
   Widget build(BuildContext context) {
+    Pregunta preguntaTitan2 = Pregunta(
+      enunciado: "enunciadoTitan2",
+      respuesta1: Respuesta(
+          enunciado: "Respuesta2", correcta: true, feedback: "feedback2"),
+      respuesta2: Respuesta(
+          enunciado: "Respuesta2", correcta: false, feedback: "feedback2"),
+    );
     final Size screenSize = MediaQuery.of(context).size;
     final double screenWidth = screenSize.width;
     final double screenHeight = screenSize.height;
     return Scaffold(
       body: Stack(children: <Widget>[
-
         // Widget 1
-      
-        
+
         Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
@@ -164,26 +165,27 @@ class RouteTitan2 extends StatelessWidget {
         ),
 // WIdget 2
         Positioned(
-        top: 20,
-        right: 0.2*screenWidth,
-        child: AnimatedTextWidget(text:
-          'Titan needs energy to address the needs of its newly arrived inhabitants'
+          top: 20,
+          right: 0.2 * screenWidth,
+          child: AnimatedTextWidget(
+              text:
+                  'Titan needs energy to address the needs of its newly arrived inhabitants'),
         ),
-      ),
-        const titan(path: 'Titan2.png'),
+        titan(
+          path: 'Titan2.png',
+          pregunta: preguntaTitan2,
+        ),
 
         Positioned(
-        bottom: 20,
-        right: 0.35*screenWidth,
-        child:
-        Text(
-        'Move on to solve problems and help Titan',
-        style: GoogleFonts.orbitron(
+          bottom: 20,
+          right: 0.35 * screenWidth,
+          child: Text('Move on to solve problems and help Titan',
+              style: GoogleFonts.orbitron(
                 fontSize: 20,
-                color: Colors.white,)
-      ),
-      ),
-           
+                color: Colors.white,
+              )),
+        ),
+
         //arrowBackGame(context),
         //arrowForwardGame(context, const Route4())
       ]),
@@ -192,8 +194,8 @@ class RouteTitan2 extends StatelessWidget {
 }
 
 class RoutePreguntas extends StatelessWidget {
-
-  const RoutePreguntas({super.key});
+  final Pregunta preguntaEsta;
+  const RoutePreguntas({super.key, required this.preguntaEsta});
 
   @override
   Widget build(BuildContext context) {
@@ -209,19 +211,8 @@ class RoutePreguntas extends StatelessWidget {
           ),
         ),
 
-        appDialog(pregunta: 
-            Pregunta(
-              enunciado: "enunciado",
-              respuesta1: Respuesta(
-                  enunciado: "enunciado resp",
-                  correcta: true,
-                  feedback: "Miguel Sexo SI"),
-              respuesta2: Respuesta(
-                  enunciado: "enunciado resp",
-                  correcta: false,
-                  feedback: "Miguel Sexo NO"),
-           ),),
-           
+        appDialog(pregunta: preguntaEsta),
+
         //arrowBackGame(context),
         //arrowForwardGame(context, const Route4())
       ]),
@@ -229,9 +220,11 @@ class RoutePreguntas extends StatelessWidget {
   }
 }
 
+
 class RouteRightAnswer extends StatelessWidget {
   final Respuesta respuesta;
-  const RouteRightAnswer({super.key, required this.respuesta});
+  final StatelessWidget nextPage;
+  const RouteRightAnswer({super.key, required this.respuesta,required this.nextPage});
 
   @override
   Widget build(BuildContext context) {
@@ -239,19 +232,18 @@ class RouteRightAnswer extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Route Right'),
         ),
-        body:  Stack(children: <Widget>[
-        correctAnswer(respuesta: respuesta),
-        arrowBackGame(context),
-        arrowForwardGame(context, const RouteTitan2(), true)
-        ]
-    )
-    );
+        body: Stack(children: <Widget>[
+          correctAnswer(respuesta: respuesta),
+          arrowBackGame(context),
+          arrowForwardGame(context, const RouteTitan2(), true)
+        ]));
   }
 }
 
 class RouteWrongAnswer extends StatelessWidget {
   final Respuesta respuesta;
-  const RouteWrongAnswer({super.key, required this.respuesta});
+  final StatelessWidget nextPage;
+  const RouteWrongAnswer({super.key, required this.respuesta, required this.nextPage});
 
   @override
   Widget build(BuildContext context) {
@@ -259,14 +251,11 @@ class RouteWrongAnswer extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Route Wrong'),
         ),
-        body:  Stack(children: <Widget>[
-        wrongAnswer(respuesta: respuesta),
-        arrowBackGame(context),
-        arrowForwardGame(context, const RouteTitan2(), true)
-        ]
-    )
-    );
-        
+        body: Stack(children: <Widget>[
+          wrongAnswer(respuesta: respuesta),
+          arrowBackGame(context),
+          arrowForwardGame(context, const RouteTitan2(), true)
+        ]));
   }
 }
 /*

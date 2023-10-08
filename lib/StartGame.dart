@@ -27,14 +27,7 @@ class _StartGameState extends State<StartGame> {
           children: [
             const mainMenu(),
             arrowForwardGame(context, const SecondRoute(), false),
-            arrowBackGame(context),
             dialogoHistoria(enunciado: widget.enunciado),
-            ElevatedButton(
-              child: const Text('Open route'),
-              onPressed: () {
-                //s enunciadoReal.frases
-              },
-            ),
           ],
         ),
       );
@@ -45,12 +38,31 @@ class _StartGameState extends State<StartGame> {
             const mainMenu(),
             arrowForwardGame(context, const SecondRoute(), false),
             arrowBackGame(context),
-            ElevatedButton(
-              child: const Text('Open route'),
-              onPressed: () {
-                //s enunciadoReal.frases
-              },
-            ),
+            // Align(
+            //   alignment: Alignment
+            //       .bottomCenter, // Esto alinea el botón en la parte inferior y en el centro
+            //   child: Padding(
+            //     // Puedes agregar Padding para dar espacio desde el borde inferior si lo deseas
+            //     padding: const EdgeInsets.all(20.0),
+            //     child: ElevatedButton(
+            //       style: ButtonStyle(
+            //         backgroundColor: MaterialStateProperty.all<Color>(
+            //             Colors.black), // Cambia al color que desees
+            //       ),
+            //       child: Text("Start the adventure"),
+            //       onPressed: () {
+            //         Navigator.push(
+            //           context,
+            //           MaterialPageRoute(
+            //               builder: (context) => StartGame(
+            //                     enunciado: widget.enunciado,
+            //                     tieneTexto: true,
+            //                   )),
+            //         );
+            //       },
+            //     ),
+            //   ),
+            // ),
           ],
         ),
       );
