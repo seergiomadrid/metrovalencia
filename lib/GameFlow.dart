@@ -100,18 +100,18 @@ class ThirdRoute extends StatelessWidget {
         ),
 
         appDialog(
-            context,
-            Pregunta(
-              enunciado: "enunciado",
-              respuesta1: Respuesta(
-                  enunciado: "enunciado resp",
-                  correcta: true,
-                  feedback: "Miguel Sexo SI"),
-              respuesta2: Respuesta(
-                  enunciado: "enunciado resp",
-                  correcta: false,
-                  feedback: "Miguel Sexo NO"),
-            )),
+            pregunta: Pregunta(
+          enunciado: "enunciado",
+          respuesta1: Respuesta(
+              enunciado: "enunciado resp",
+              correcta: true,
+              feedback: "Miguel Sexo SI"),
+          respuesta2: Respuesta(
+              enunciado: "enunciado resp",
+              correcta: false,
+              feedback: "Miguel Sexo NO"),
+        )),
+
         //arrowBackGame(context),
         //arrowForwardGame(context, const Route4())
       ]),

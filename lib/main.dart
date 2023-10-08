@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
+import 'package:metrovalencia/Clases/enunciado.dart';
 import 'package:metrovalencia/titanInfo.dart';
 import 'HomeView.dart';
 import 'StartGame.dart';
@@ -69,7 +70,10 @@ class _NavigationExampleState extends State<NavigationExample> {
       ),
       body: <Widget>[
         HomeView(),
-        StartGame(),
+        StartGame(
+          enunciado: Enunciado(frases: ['frase1', 'frase2']),
+          tieneTexto: true,
+        ),
         InfoView(),
         titanInfo(),
 
