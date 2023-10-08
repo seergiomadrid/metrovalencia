@@ -36,12 +36,13 @@ class FirstRoute extends StatelessWidget {
             ),
           ),
         ),
-        arrowBackGame(context),
+        //arrowBackGame(context),
         arrowForwardGame(context, const SecondRoute(), false)
       ]),
     );
   }
 }
+
 
 class SecondRoute extends StatelessWidget {
   const SecondRoute({super.key});
@@ -66,12 +67,7 @@ class SecondRoute extends StatelessWidget {
       coheteGrande(),
       arrowForwardGame(context, RouteTitan1(), true),
       arrowBackGame(context),
-      ElevatedButton(
-        child: const Text('Open route'),
-        onPressed: () {
-          //Navigator.of(context).push(createRoute(context,));
-        },
-      ),
+      
       // Center(
       //     child: Column(
       //         mainAxisAlignment: MainAxisAlignment.center,

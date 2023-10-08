@@ -27,14 +27,9 @@ class _StartGameState extends State<StartGame> {
           children: [
             const mainMenu(),
             arrowForwardGame(context, const SecondRoute(), false),
-            arrowBackGame(context),
+            
             dialogoHistoria(enunciado: widget.enunciado),
-            ElevatedButton(
-              child: const Text('Open route'),
-              onPressed: () {
-                //s enunciadoReal.frases
-              },
-            ),
+            
           ],
         ),
       );

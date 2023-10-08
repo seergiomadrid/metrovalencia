@@ -67,7 +67,7 @@ class _NavigationExampleState extends State<NavigationExample> {
         HomeView(),
         StartGame(
           enunciado: Enunciado(frases: ['frase1', 'frase2']),
-          tieneTexto: true,
+          tieneTexto: false, // CAMBIADOO
         ),
         titanInfo(),
 
