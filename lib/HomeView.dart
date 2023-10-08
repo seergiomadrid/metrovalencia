@@ -13,7 +13,7 @@ class HomeView extends StatelessWidget {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('fondoTitanautsBueno.png'),
+            image: AssetImage('assets/fondoTitanautsBueno.png'),
             fit: BoxFit.fill,
           ),
         ),
