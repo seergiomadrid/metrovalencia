@@ -58,13 +58,8 @@ class _NavigationExampleState extends State<NavigationExample> {
           ),
           NavigationDestination(
             selectedIcon: Icon(Icons.info),
-            icon: Icon(Icons.help),
-            label: 'More information',
-          ),
-          NavigationDestination(
-            selectedIcon: Icon(Icons.info_sharp),
-            icon: Icon(Icons.info),
-            label: 'More bout Titan',
+            icon: Icon(Icons.help), 
+            label: 'More about Titan',
           ),
         ],
       ),
@@ -74,7 +69,6 @@ class _NavigationExampleState extends State<NavigationExample> {
           enunciado: Enunciado(frases: ['frase1', 'frase2']),
           tieneTexto: true,
         ),
-        InfoView(),
         titanInfo(),
 
         /*

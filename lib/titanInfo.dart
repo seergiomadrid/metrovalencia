@@ -168,14 +168,15 @@ Widget createContainerWithText(
               2.0,
               40,
               ),
+
               createContainerWithText(
-              "Visita mi perfil en Twitter",
-              Color.fromARGB(255, 0, 28, 69) ?? Colors.blue,
+              "NAASA",
+              Colors.blue[900] ?? Colors.blue,
               150,
               GoogleFonts.orbitron(),
               Colors.black, // Agrega el color del borde aquí
               2.0,
-              40,
+              22,
               ),
               linkURL(context, 'https://science.nasa.gov/saturn/moons/titan/',
               ), // Llama a la función linkURL aquí
