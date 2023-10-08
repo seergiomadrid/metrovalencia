@@ -49,11 +49,14 @@ class _dialogoHistoriaState extends State<dialogoHistoria> {
                 // Esto tomará todo el espacio disponible y centrará el texto dentro de él
                 Expanded(
                   child: Center(
-                    child: Text(
-                      widget.enunciado.frases[index],
-                      style: GoogleFonts.orbitron(
-                        fontSize: 18,
-                        color: Colors.white,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 50),
+                      child: Text(
+                        widget.enunciado.frases[index],
+                        style: GoogleFonts.orbitron(
+                          fontSize: 18,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
                   ),
@@ -63,6 +66,10 @@ class _dialogoHistoriaState extends State<dialogoHistoria> {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                          Colors.black), // Cambia al color que desees
+                    ),
                     onPressed: () {
                       if (index < widget.enunciado.frases.length - 1) {
                         setState(() {
@@ -87,7 +94,7 @@ class _dialogoHistoriaState extends State<dialogoHistoria> {
                         // );
                       }
                     },
-                    child: Text("siguiente"),
+                    child: Text("Next"),
                   ),
                 )
               ],
