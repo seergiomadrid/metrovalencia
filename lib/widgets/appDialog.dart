@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'AnimateText.dart';
 
 
-Widget appDialog(BuildContext context, String pregunta){ // Maybe use this: String question, String answer1, nextPage1
+Widget appDialog(BuildContext context, String pregunta, respuesta1, pantalla1, ){ // Maybe use this: String question, String answer1, nextPage1
   
   return Stack(
   children: [
@@ -70,7 +70,7 @@ Widget appDialog(BuildContext context, String pregunta){ // Maybe use this: Stri
             Navigator.pop(context);
           },
           child: Text(
-              "A.       Set up orbital mirrors to amplify sunlight",
+              respuesta1,
               style: GoogleFonts.orbitron(
                 fontSize: 18,
                 color: Colors.white, // Color de texto blanco para contraste
