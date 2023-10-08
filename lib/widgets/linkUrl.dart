@@ -8,7 +8,7 @@ Widget linkURL(BuildContext context, url) {
   left: 20, // Ajusta la posición del enlace según tus necesidades
   child: InkWell(
     onTap: () {
-      launchUrlString('https://twitter.com/home?lang=es');
+      launchUrlString('https://science.nasa.gov/saturn/moons/titan/');
     },
     child: Text(
       "Visita mi perfil en Twitter",
