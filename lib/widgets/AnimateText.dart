@@ -56,7 +56,7 @@ class _AnimatedTextWidgetState extends State<AnimatedTextWidget> {
       child: Text(
         visibleLetters,
         style: GoogleFonts.orbitron(
-                fontSize: 18,
+                fontSize: 20,
                 color: Colors.white,)
       ),
     );

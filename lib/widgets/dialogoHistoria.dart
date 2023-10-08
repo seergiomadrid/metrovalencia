@@ -44,7 +44,7 @@ class dialogoHistoria extends StatelessWidget {
                 ],
               ),
               child: AnimatedTextWidget(
-                text: "Esta es la pregunta : ${pregunta.enunciado}",
+                text: "Esta es la pregunta ",
               )),
         ),
       ],

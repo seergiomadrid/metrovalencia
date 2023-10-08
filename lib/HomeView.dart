@@ -9,10 +9,10 @@ class HomeView extends StatelessWidget {
       appBar: AppBar(
         title: Text('Home'),
       ),
-      body: Container(
+      body:Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('TitanCityMain.PNG'),
+            image: AssetImage('main_planeta.jpg'),
             fit: BoxFit.cover,
           ),
         ),
