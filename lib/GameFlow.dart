@@ -179,7 +179,7 @@ class RouteTitan2 extends StatelessWidget {
                   'Titan needs energy to address the needs of its newly arrived inhabitants'),
         ),
         titan(
-          path: 'Titan2.png',
+          path: 'assets/Titan2.png',
           pregunta: preguntaTitan2,
         ),
 
